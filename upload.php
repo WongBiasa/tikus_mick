@@ -1,15 +1,15 @@
-<? php
-print_r ( $ _FILES ); // ini akan mencetak nama yang diterima, nama sementara, jenis, ukuran, dll.
+<?php
+print_r($_FILES); //this will print out the received name, temp name, type, size, etc.
 
-if (! empty ( $ _FILES )) {
-error_log ( "Diterima" . "\ r \ n" , 3 , "Log.log" );
+if (!empty($_FILES)) {
+error_log("Received" . "\r\n", 3, "Log.log");
 
 }
 
-$ size = $ _FILES [ 'audio_data' ] [ 'size' ]; // ukuran dalam byte
-$ input = $ _FILES [ 'audio_data' ] [ 'tmp_name' ]; // nama sementara yang diberikan PHP ke file yang diunggah
-$ output = $ _FILES [ 'audio_data' ] [ 'nama' ]. ".wav" ; // membiarkan klien mengontrol nama file adalah ide yang agak buruk
+$size = $_FILES['audio_data']['size']; //the size in bytes
+$input = $_FILES['audio_data']['tmp_name']; //temporary name that PHP gave to the uploaded file
+$output = $_FILES['audio_data']['name'].".wav"; //letting the client control the filename is a rather bad idea
 
-// pindahkan file dari nama temp ke folder lokal menggunakan $ output name
-move_uploaded_file ( $ input , $ output )
+//move the file from temp name to local folder using $output name
+move_uploaded_file($input, $output)
 ?>
